@@ -1,0 +1,281 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+}
+
+.projects-container {
+    background-color: #1e1e1e;
+    width: 100%;
+    margin: auto; 
+    justify-items: center;
+    margin-top: 50px; 
+}
+
+.projects-title {
+   width: 100%; 
+}
+
+.projects-title h2 {
+    margin-left: 19%;
+    color: #3579f6;
+    align-items: start;
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: start;
+}
+
+.projects-tools {  
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+    gap: 25px; 
+    align-items: baseline;
+    justify-content: center;
+    width: 100%;
+}
+
+.projects-container button { 
+    padding: 10px;
+    color: #ffffff;
+    background-color: #3579f6;
+    border-radius: 5px;
+    border-style: hidden;
+    width: 130px;
+}
+
+.projects-container button:hover {
+    background-color: #1a56c5;
+}
+
+.projects-container input {
+    padding: 10px;
+    border-radius: 5px;
+    border-style: hidden;
+    width: 40%;
+    background-color: white;
+    color: #000;
+}
+
+.projects-container select {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    border-style: hidden;
+    width: 130px;
+    background-color: white;
+    color: black;
+} 
+
+.projects-grid {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 20px;
+    justify-items: center;
+    align-items: center; 
+}
+
+.project-card {
+    width: 280px;
+    height: 250px;
+    max-width: 280px;
+    max-height: 250px;
+    background-color: #333333;
+    padding: 15px;
+    border: 1px solid #848080;
+    border-radius: 10px;
+    border-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    padding-top: 1px;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #3579f6;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Modal styles */
+.projects-modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;  
+}
+
+/* Modal content */
+#addProjectModal .modal-content {
+    background-color: #1e1e1e;
+    margin: 2% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    border-radius: 10px;
+    align-items: start;
+}
+
+.projects-container label {
+    color: white;
+    font-weight: bold;
+}
+
+#addProjectModal .modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    align-content: start;
+    justify-content: left;
+    justify-items: left;
+    
+}
+
+#addProjectModal .top-modal {
+    display: flex;
+    justify-content: left;
+    justify-items: left;
+    margin-top: 5px;
+}
+
+#addProjectModal .modal-content textarea {
+    width: 98%;
+    background-color: #333333;
+    color: white;
+    border-radius: 5px;
+    border-style: hidden;
+    height: 60px;
+}
+
+#addProjectModal .modal-content input {
+    width: 95%;
+    background-color: #333333;
+    color: white;
+}
+
+#addProjectModal .modal-content button {
+    background-color: #4caf50;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+}
+
+#addProjectModal .modal-content select {
+    width: 100%;
+    background-color: #333333;
+    color: white;
+}
+
+#addProjectModal .modal-content #studentsList {
+    height: 70px;
+}
+
+/* Close button */
+#addProjectModal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Modal Styling */
+.projects-modal2 {
+    display: flex;
+    position: fixed;
+    justify-content: end;
+    z-index: 1000;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.projects-modal2 .modal-content2 {
+    background-color: #1e1e1e;
+    color: white;
+    width: 350px;
+    height: 100%;
+    position: fixed;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
+    text-align: left; 
+    padding-top: 1px;
+    padding-left: 10px ;
+}
+
+.solid-line {
+    width: 100%;
+    background-color: grey;
+    height: 1.2px;
+    margin-top: -15px;
+    opacity: 20%;
+}
+
+.projects-container p {
+    margin-bottom: 2px; 
+
+}
+
+#modalTasks {
+    overflow-y: scroll; /* Enables vertical scrolling */
+    scrollbar-width: none;
+}
+
+.task-card {
+    background: #333333;
+    padding: 15px;
+    border-radius: 5px;
+    width: 90%;
+    margin-top: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid #067c6e; 
+    margin-bottom: 15px;
+}
+.task-card p {
+    margin: 15px 0;
+    font-size: 15px;
+}
+
+.task-card .taskid {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+@media (max-width: 1024px) { /* Tablets */
+    .projects-tools {
+        gap: 15px;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(280px, 1fr)); /* 2 columns */
+    }
+}
+
+@media (max-width: 767px) { /* Mobile */
+    .projects-tools{
+        gap: 15px;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(1, minmax(280px, 1fr)); /* 1 column */
+        width: 100% ;
+    }
+}

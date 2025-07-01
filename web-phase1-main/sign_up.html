@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" href="./assets/css/signUp.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign Up</h2>
+        <form>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="is-student">
+                <label for="is-student">I am a student</label>
+            </div>
+            <div class="input-group hidden" id="student-id-group">
+                <div class="t">
+                    <label for="student-id">University ID</label>
+                    <input type="text" id="student-id" name="student-id">
+                </div>
+            </div>
+            <button type="submit" class="login-btn">Sign Up</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('is-student').addEventListener('change', function() {
+            const studentIdGroup = document.getElementById('student-id-group');
+            studentIdGroup.classList.toggle('hidden', !this.checked);
+        });
+    </script>
+
+    <script src="./assets/js/signUp.js"></script>
+</body>
+</html>

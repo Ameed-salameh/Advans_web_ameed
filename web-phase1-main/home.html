@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" href="./assets/css/projects.css">
+    <link rel="stylesheet" href="./assets/css/chat.css">
+    <link rel="stylesheet" href="./assets/css/tasks.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+</head>
+
+<body>
+
+    <div class="s">
+        <a href="#" class="nav-link" onclick="toHome(event)">Home</a>
+        <a href="#" class="nav-link" onclick="toProject(event)">Projects</a>
+        <a href="#" class="nav-link" onclick="toTask(event)">Tasks</a>
+        <a href="#" class="nav-link" onclick="toChat(event)">Chat</a>
+    </div>
+
+
+    <div class="header">
+        <span id="welcome-message">Welcome</span>
+        <button class="logout">Logout</button>
+    </div>
+
+
+    <div id="app-content">
+
+        <div class="home-All">
+            <div class="container">
+                <div class="dash-h">
+                    <h1>Welcome to the Task Management System</h1>
+                    <p class="date-time" id="dateTime"></p>
+                </div>
+
+                <div class="stats">
+                    <div class="card">
+                        <h3>Number of Projects</h3>
+                        <p></p>
+                    </div>
+                    <div class="card">
+                        <h3>Number of Students</h3>
+                        <p></p>
+                    </div>
+                    <div class="card">
+                        <h3>Number of Tasks</h3>
+                        <p></p>
+                    </div>
+                    <div class="card">
+                        <h3>Number of Finished Projects</h3>
+                        <p></p>
+                    </div>
+                </div>
+                <h2 class="admin-h">Admin Dashboard Overview</h2>
+                <canvas id="dashboardChart"></canvas>
+            </div>
+        </div>
+
+        <div class="projects-All">
+            <div class="projects-container">
+                <div class="projects-title">
+                    <h2>Projects Overview</h2>
+                </div>
+                <div class="projects-tools">
+                    <button id="addProject">Add New Project</button>
+                    <input type="text" id="search" placeholder="Search projects by title or description...">
+                    <select id="statusFilter">
+                        <option value="all">All Statuses</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                        <option value="on-hold">On Hold</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <div id="projectsContainer" class="projects-grid"></div>
+            </div>
+            <div id="addProjectModal" class="projects-modal" style="display:none;">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <h2 class="top-modal" style="color: #3579f6;">Add New Project</h2>
+                    <form id="addProjectForm">
+                        <label for="projectTitle">Project Title:</label>
+                        <input type="text" id="projectTitle" placeholder="Enter project title">
+
+                        <label for="projectDescription">Project Description:</label>
+                        <textarea id="projectDescription" placeholder="Enter project description"></textarea>
+
+                        <label for="studentsList">Students List:</label>
+                        <select id="studentsList" multiple size="5">             
+                        </select>
+
+                        <label for="projectCategory">Project Category:</label>
+                        <select id="projectCategory">
+                            <option>Select a category</option>
+                            <option>Web Development</option>
+                            <option>Embedded Systems</option>
+                            <option>AI & Machine Learning</option>
+                            <option>Data Science</option>
+                        </select>
+
+                        <label for="startDate">Starting Date:</label>
+                        <input type="date" id="startDate">
+
+                        <label for="endDate">Ending Date:</label>
+                        <input type="date" id="endDate">
+
+                        <label for="projectStatus">Project Status:</label>
+                        <select id="projectStatus">
+                            <option value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                            <option value="on-hold">On Hold</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+
+                        <button type="submit">Add Project</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div id="projectModal" class="projects-modal2">
+                <div class="modal-content2">
+                    <h2 id="modalTitle" style="color: #0ab4cb; font-weight: bold;"></h2>
+                    <div class="solid-line"></div>
+                    <p style="margin-bottom: 3px; margin-top: 15px;"><strong>Description:</strong> <span id="modalDescription"></span></p>
+                    <p style="margin-bottom: 5px; margin-top: 5px;"><strong>Category:</strong> <span id="modalCategory"></span></p>
+                    <p style="margin-bottom: 5px; margin-top: 5px;"><strong>Students:</strong> <span id="modalStudents"></span></p>
+                    <p style="margin-bottom: 5px; margin-top: 5px;"><strong>Start Date:</strong> <span id="modalStartDate"></span></p>
+                    <p style="margin-bottom: 5px; margin-top: 5px;"><strong>End Date:</strong> <span id="modalEndDate"></span></p>
+                    <h2 style="color: #0ab4cb; font-weight: bold;">Tasks</h3>
+                    <div class="solid-line"></div>
+                    <div id="modalTasks" style="width: 100%; margin: 5px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tasks-All">
+            <div class="task-container">
+                <div class="task-header">
+                    <div class="sort">
+                        <label for="sort">Sort By:</label>
+                        <select class="task-status" id="sort">
+                            <option value="status">Task Status</option>
+                            <option value="project">Project</option>
+                            <option value="dueDate">Due Date</option>
+                            <option value="assignedStudent">Assigned Student</option>
+                        </select>
+                    </div>
+                    <button class="create-task">Create a New Task</button>
+                    <div class="modal" id="taskModal">
+                        <div class="modal-content">
+                            <div class="modal-h">
+                                <span class="close" id="closeModal3">&times;</span>
+                                <h2>Create New Task</h2>
+                            </div>
+                            <div class="select-project">
+                                <label>Project Title:</label>
+                                <select>
+                                    <option>Select a project</option>
+                                </select>
+                            </div>
+                            <div class="task-name">
+                                <label>Task Name:</label>
+                                <input type="text">
+                            </div>
+                            <div class="task-desc">
+                                <label>Description:</label>
+                                <textarea></textarea>
+                            </div>
+                            <div class="task-assign">
+                                <label>Assigned Student:</label>
+                                <select>
+                                    <option>Select a student</option>
+                                </select>
+                            </div>
+                            <div class="modaltask-status">
+                                <label>Status:</label>
+                                <select>
+                                    <option>Select a status</option>
+                                    <option>In Progress</option>
+                                    <option>Completed</option>
+                                    <option>Pending</option>
+                                </select>
+                            </div>
+                            <div class="task-date">
+                                <label>Due Date:</label>
+                                <input type="date">
+                            </div>
+                            <button class="add-task">Add Task</button>
+                        </div>
+                    </div>
+                </div>
+                <table class="task-table">
+                    <thead>
+                        <tr>
+                            <th>Task ID</th>
+                            <th>Project</th>
+                            <th>Task Name</th>
+                            <th>Description</th>
+                            <th>Assigned Student</th>
+                            <th>Status</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="chat-All">
+            <div class="chat-container">
+                <div class="chat-sidebar">
+                    <h2 class="h">List of Students</h2>
+                    <ul id="chat-student-list">
+                        <li onclick="startChat('')"></li>
+                    </ul>
+                </div>
+                <div class="chat-box">
+                    <div id="chat-window">
+                        <h3 id="chat-header">Chatting with...</h3>
+                        <div class="message received" style="text-align: right;">Salam Alykoum</div>
+                        <div class="input-area">
+                            <input type="text" id="message-input" placeholder="Type your message...">
+                            <button onclick="sendMessage()">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/projects.js"></script>
+    <script src="./assets/js/chat.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/task.js"></script>
+    <script src="./assets/js/home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color:#1e1e1e;
+  display: flex;
+  }
+
+
+.s{
+width: 200px;
+height:100vh ;
+display:flex;
+flex-direction: column;
+background-color: #222;
+padding-top: 55px;
+font: bold;
+margin-left: -20px;
+}
+
+.s a{
+
+    background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            font-size: 16px;
+
+}
+
+
+
+ .s a:hover {
+    background-color: #3579f6;
+}
+
+
+.header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #222;
+    width: calc(100% - 200px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 2px solid;
+    width: 100%;
+}
+
+#welcome-message{
+  margin-right: 45px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.logout {
+    border-radius:10%;
+
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.a{
+        position: absolute;
+        bottom: 0px; 
+        left: 0;
+        width: 100%;
+        left: -200px;
+        width: calc(100% + 200px);
+        height: 2px;
+        background-color: #757675;
+      
+}
+
+.logout:hover {
+    background-color: darkred;
+}
+
+#app-content{
+  width: 100%;
+}
+
+
+.projects-All{
+  display: none;
+}
+.tasks-All{
+  display: none;
+}
+
+.chat-All{
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.visible {
+  display: block;
+}
+
+
+
+@media (max-width: 768px) {
+    .logout {
+      font-size: 4vw; 
+      padding: 12px 24px; 
+    }
+    
+    .s {
+      width: 100%;
+      padding-top: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logout {
+      font-size: 5vw; 
+      padding: 10px 20px;
+    }
+  }

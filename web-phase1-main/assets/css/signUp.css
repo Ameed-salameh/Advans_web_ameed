@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+.login-container {
+    background-color: #161616;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+    color: white;
+}
+.login-container h2 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+
+}
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+.login-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+.login-btn:hover {
+    background-color: #0e6c35;
+}
+.hidden {
+    display: none;
+}
+@media (max-width: 400px) {
+    .login-container {
+        padding: 15px;
+    }
+    .login-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

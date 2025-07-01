@@ -1,0 +1,167 @@
+
+/* Tasks styling */
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.task-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 55px;
+}
+
+.task-status {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(51, 51, 51);
+    color: #fff;
+    width: auto; 
+    min-width: fit-content;
+}
+
+.task-status option {
+    width: auto;
+    min-width: fit-content;
+    padding: 5px;
+}
+
+
+.sort label{
+    font-weight: bold;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.task-table th, .task-table td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    text-align: left;
+}
+
+.task-table th {
+    background: #333;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.in-progress {
+    color: #48a34c;
+}
+
+.status.completed {
+    color: #3579f6;
+}
+
+.status.pending {
+    color: #ea9009;
+}
+
+.create-task {
+    background: #3579f6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.create-task:hover {
+    background: #165de0;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+.modal-content {
+    background: #111;
+    width: 40%;
+    margin: 4% auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-h h2{
+    color: #3579f6;
+}
+
+.modal-content label{
+    color: rgb(229, 229, 229);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+select {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 8px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+input{
+    width: 98%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 8px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+textarea{
+    width: 98%;
+    height: 90px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 8px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+}
+.add-task {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
